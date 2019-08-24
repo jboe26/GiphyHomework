@@ -58,10 +58,10 @@ $( document ).ready(function() {
     $("#submit").on('click', function(event) {
      
         event.preventDefault();
-        var newQuery = $('#text').val()
-        console.log(newQuery);
-
+        var newQuery = $('#text').val();
         
+
+        topics.push(newQuery);
         
     
 
