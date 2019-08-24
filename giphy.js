@@ -45,6 +45,7 @@ $( document ).ready(function() {
               personImage.attr("data-animate", results[i].images.original.url);
               personImage.attr("current-state", "still");
 
+              
         
             
             console.log(personImage);
