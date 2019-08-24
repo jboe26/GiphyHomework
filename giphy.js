@@ -37,27 +37,45 @@ $( document ).ready(function() {
             
             for (var i = 0; i < results.length; i++) {
               var gifDiv = $("<div>");
-
+              console.log(i);
   
               var personImage = $("<img>");
               personImage.attr("src", results[i].images.fixed_height_still.url);
+              personImage.attr("data-still", results[i].images.fixed_height_still.url);
+              personImage.attr("data-animate", results[i].images.original.url);
+              personImage.attr("current-state", "still");
 
-
-
+        
+            
             console.log(personImage);
-             gifDiv.empty();
+            
              gifDiv.prepend(personImage);
   
               $("#gifs-appear-here").prepend(personImage);
               
 
               
-              // rating = $("<p>").append(gifDiv);
+              //  var rating = $("<p>").append(gifDiv);
               // gifDiv.append(rating);
               
-              // $("<p>").text("Rating: " + response.data[0].rating);
+              //  $("<p>").text("Rating: " + response.data[0].rating);
 
             }
+
+            function gifState() {
+                // if / else
+
+
+
+
+
+
+              
+            }
+
+            $(document).on("click", ".gif", gifState);
+            $(document).on("click", ".topic", topicImages);
+
           });
 
         
