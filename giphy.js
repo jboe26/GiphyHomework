@@ -40,33 +40,43 @@ $( document ).ready(function() {
 
   
               var personImage = $("<img>");
-              personImage.attr("src", results[i].images.fixed_height.url);
-                console.log(personImage);
+              personImage.attr("src", results[i].images.fixed_height_still.url);
+
+
+
+            console.log(personImage);
              gifDiv.empty();
              gifDiv.prepend(personImage);
   
               $("#gifs-appear-here").prepend(personImage);
-
-              $("#rating").text("Rating: " + response.data[0].rating);
               
+
+              
+              // rating = $("<p>").append(gifDiv);
+              // gifDiv.append(rating);
+              
+              // $("<p>").text("Rating: " + response.data[0].rating);
 
             }
           });
+
+        
       });
     
+      
 
     $("#submit").on('click', function(event) {
      
         event.preventDefault();
-        var newQuery = $('#text').val();
-        
+        var newQuery = $('#text').val().trim();
+        var newCountry = $("<button>").html(newQuery);
+
 
         topics.push(newQuery);
-        
-    
+        newCountry.append("#buttons");
+        console.log(newCountry);        
 
-         
-      
+         populateButtons();
 
       })
       
