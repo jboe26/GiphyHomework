@@ -22,7 +22,7 @@ $( document ).ready(function() {
           console.log(this);
           console.log(queryURL);
 
-         
+          
 
         
 
@@ -34,7 +34,7 @@ $( document ).ready(function() {
             var results = response.data;
   
             
-  
+            
             for (var i = 0; i < results.length; i++) {
               var gifDiv = $("<div>");
 
@@ -46,17 +46,31 @@ $( document ).ready(function() {
              gifDiv.prepend(personImage);
   
               $("#gifs-appear-here").prepend(personImage);
+
+              $("#rating").text("Rating: " + response.data[0].rating);
+              
+
             }
           });
       });
     
-      $("#submit").on("click", click)
-      function click(event) {
-        event.preventDefault();
 
+    $("#submit").on('click', function(event) {
+     
+        event.preventDefault();
+        var newQuery = $('#text').val()
+        console.log(newQuery);
+
+        
+        
+    
+
+         
+      
+
+      })
       
       
-      }
       
       populateButtons();
 
