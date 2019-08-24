@@ -64,6 +64,7 @@ $( document ).ready(function() {
 
             function gifState() {
                 
+              //wasnt sure how to do the animate part.. if a TA could explain in more detail that'd be great!!
 
 
 
