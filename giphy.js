@@ -31,9 +31,20 @@ $( document ).ready(function() {
         method: "GET"
       })
         .then(function (response) {
+          var state = 
           var results = response.data;
 
-          
+          $(".gif").on("click", function() {
+            
+            var state = $(this).attr("data-state");
+            if (state === "still") {
+              $(this).attr("src", $(this).attr("data-animate"));
+              $(this).attr("data-state", "animate");
+            } else {
+              $(this).attr("src", $(this).attr("data-still"));
+              $(this).attr("data-state", "still");
+            }
+          });
           
           for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
@@ -63,20 +74,7 @@ $( document ).ready(function() {
 
           }
 
-          function gifState() {
-              
-            //wasnt sure how to do the animate part.. if a TA could explain in more detail that'd be great!!
-
-
-
-
-
-
-            
-          }
-
-          $(document).on("click", ".gif", gifState);
-          $(document).on("click", ".topic", topicImages);
+    
 
         });
 
