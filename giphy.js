@@ -31,12 +31,12 @@ $( document ).ready(function() {
         method: "GET"
       })
         .then(function (response) {
-          var state = 
+          var state = $(this).attr("data-state");
           var results = response.data;
 
           $(".gif").on("click", function() {
             
-            var state = $(this).attr("data-state");
+            state = $(this).attr("data-state");
             if (state === "still") {
               $(this).attr("src", $(this).attr("data-animate"));
               $(this).attr("data-state", "animate");
@@ -55,7 +55,7 @@ $( document ).ready(function() {
             personImage.attr("data-still", results[i].images.fixed_height_still.url);
             personImage.attr("data-animate", results[i].images.original.url);
             personImage.attr("current-state", "still");
-
+            personImage.addClass("gif");
             
       
           
