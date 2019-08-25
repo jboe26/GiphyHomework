@@ -34,6 +34,17 @@ $( document ).ready(function() {
           var state = $(this).attr("data-state");
           var results = response.data;
 
+          for (var i = 0; i < results.length; i++) {
+            var gifDiv = $("<div>");
+            console.log(i);
+
+            var personImage = $("<img>");
+            personImage.attr("src", results[i].images.fixed_height_still.url);
+            personImage.attr("data-still", results[i].images.fixed_height_still.url);
+            personImage.attr("data-animate", results[i].images.original.url);
+            personImage.attr("current-state", "still");
+            personImage.addClass("gif");
+            
           $(".gif").on("click", function() {
             
             state = $(this).attr("data-state");
@@ -46,17 +57,6 @@ $( document ).ready(function() {
             }
           });
           
-          for (var i = 0; i < results.length; i++) {
-            var gifDiv = $("<div>");
-            console.log(i);
-
-            var personImage = $("<img>");
-            personImage.attr("src", results[i].images.fixed_height_still.url);
-            personImage.attr("data-still", results[i].images.fixed_height_still.url);
-            personImage.attr("data-animate", results[i].images.original.url);
-            personImage.attr("current-state", "still");
-            personImage.addClass("gif");
-            
       
           
           console.log(personImage);
